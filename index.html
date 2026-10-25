@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Sidto — Festival Wishes</title>
+  <meta name="description" content="Personalised Hindu festival, vrat and daily wishes with your name and photo.">
+  <meta name="theme-color" content="#7A1E2C">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;800&family=Yatra+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="app-header">
+    <a class="brand" href="#/home" aria-label="Sidto home">
+      <img src="assets/icons/icon-192.png" alt="" width="38" height="38">
+      <span><span class="brand-name">Sidto</span><span class="brand-tag" data-i18n="tagline"></span></span>
+    </a>
+    <span class="header-spacer"></span>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button type="button" data-lang="hi">हिं</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+  </header>
+
+  <div class="banners" id="banners" aria-live="polite"></div>
+
+  <div class="shell">
+    <main id="view" tabindex="-1">
+      <noscript><div class="notice err">Sidto needs JavaScript enabled.</div></noscript>
+    </main>
+  </div>
+
+  <nav class="bottom-nav" aria-label="Main">
+    <a href="#/home" data-route="home"><span class="ic">🏠</span><span data-i18n="nav_home"></span></a>
+    <a href="#/categories" data-route="categories"><span class="ic">🗂️</span><span data-i18n="nav_categories"></span></a>
+    <a href="#/create" data-route="create"><span class="ic">✨</span><span data-i18n="nav_create"></span></a>
+    <a href="#/video" data-route="video"><span class="ic">🎬</span><span data-i18n="nav_video"></span></a>
+    <a href="#/profile" data-route="profile"><span class="ic">👤</span><span data-i18n="nav_profile"></span></a>
+  </nav>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Order matters: config first, app last. -->
+  <script src="js/config.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/dates.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/prompt.js"></script>
+  <script src="js/imageService.js"></script>
+  <script src="js/poster.js"></script>
+  <script src="js/video.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

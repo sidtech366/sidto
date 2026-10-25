@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+<!-- Original Sidto icon -->
+<defs>
+<radialGradient id="bg" cx=".5" cy=".6" r=".75"><stop offset="0" stop-color="#C2410C"/><stop offset=".55" stop-color="#7A1E2C"/><stop offset="1" stop-color="#3E0B24"/></radialGradient>
+<radialGradient id="g"><stop offset="0" stop-color="#FFD36B" stop-opacity=".9"/><stop offset="1" stop-color="#FF7A00" stop-opacity="0"/></radialGradient>
+<linearGradient id="f" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#FF5A00"/><stop offset=".55" stop-color="#FFB21E"/><stop offset="1" stop-color="#FFF1A8"/></linearGradient>
+<linearGradient id="c" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F59E0B"/><stop offset="1" stop-color="#B45309"/></linearGradient>
+</defs>
+<rect width="512" height="512" fill="url(#bg)"/>
+<circle cx="256" cy="230" r="170" fill="url(#g)"/>
+<path d="M256 96 C214 160 226 220 256 250 C286 220 298 160 256 96 Z" fill="url(#f)"/>
+<path d="M256 150 C240 185 246 215 256 228 C266 215 272 185 256 150 Z" fill="#FFF7C2"/>
+<path d="M120 280 Q256 450 392 280 Q256 320 120 280 Z" fill="url(#c)"/>
+<ellipse cx="256" cy="282" rx="136" ry="18" fill="#FCD34D"/>
+</svg>

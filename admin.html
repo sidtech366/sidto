@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Sidto Admin (demo)</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#4A0E1F">
+  <link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;800&family=Yatra+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body { padding-bottom: 24px; padding-left: 0 !important; }
+    .app-header { position: relative; }
+    .demo-strip { background: repeating-linear-gradient(45deg, #FFE08A, #FFE08A 12px, #FFD45A 12px, #FFD45A 24px); color: #4A2A00; font-weight: 800; padding: 10px 16px; text-align: center; font-size: 14px; }
+    .tabs { display: flex; gap: 6px; margin: 12px 0; overflow-x: auto; }
+    .tabs button { border: 1.5px solid var(--line); background: #fff; border-radius: 999px; padding: 8px 16px; font-weight: 700; cursor: pointer; white-space: nowrap; }
+    .tabs button[aria-selected="true"] { background: var(--maroon); color: #fff; border-color: var(--maroon); }
+    .rec { display: flex; gap: 10px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--line); }
+    .rec img { width: 46px; height: 58px; object-fit: cover; border-radius: 8px; flex: 0 0 auto; background: #eee; }
+    .rec .info { flex: 1; min-width: 0; }
+    .rec .info strong { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .rec .acts { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+    .st { font-size: 11px; font-weight: 800; padding: 2px 8px; border-radius: 999px; }
+    .st.published { background: #EAF7EE; color: #15803D; } .st.draft { background: #F1F1F1; color: #555; }
+    .two { display: grid; gap: 0 12px; grid-template-columns: 1fr 1fr; }
+    .three { display: grid; gap: 0 12px; grid-template-columns: 1fr 1fr 1fr; }
+    .issues li { margin-bottom: 4px; }
+    #pvCanvas { width: 100%; max-width: 260px; border-radius: 12px; display: block; margin: 0 auto; }
+    .admin-editor { display: grid; gap: 14px; }
+    @media (min-width: 900px) { .admin-editor { grid-template-columns: 1fr 300px; align-items: start; } .admin-editor .pv { position: sticky; top: 12px; } }
+  </style>
+</head>
+<body>
+  <div class="demo-strip">⚠️ DEMO ADMIN — no login, no security. Edits are saved only in this browser until you export and publish them.</div>
+  <header class="app-header">
+    <a class="brand" href="index.html#/home"><img src="assets/icons/icon-192.png" alt="" width="38" height="38"><span><span class="brand-name">Sidto</span><span class="brand-tag">Admin prototype</span></span></a>
+    <span class="header-spacer"></span>
+    <a class="btn small ghost" href="index.html#/home">Open app →</a>
+  </header>
+  <main id="admin" class="shell">
+    <p class="muted">Loading…</p>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/dates.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/poster.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
