@@ -177,7 +177,7 @@
       await Poster.render($("#pvCanvas"), {
         bgUrl: imageOf(f), title: f.name[pvLang] || f.name.en, wish: f.wish[pvLang] || f.wish.en,
         name: pvLang === "hi" ? "रमेश शर्मा" : "Ramesh Sharma", tagline: "", photo: "",
-        prefs: Object.assign(Store.getPosterPrefs(), { showPhoto: false }), theme: { textColor: tpl.textColor || "#fff", accent: tpl.accent || "#FFB020" }
+        prefs: Object.assign(Store.getPosterPrefs(), { showPhoto: false }), theme: { textColor: tpl.textColor || "#fff", accent: tpl.accent || "#FFB020", titleY: tpl.titleY || 0 }
       });
     }
     let pt = 0;

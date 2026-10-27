@@ -264,7 +264,7 @@
     let f = (id && Data.find(id)) || Data.find(todays[0]) || pub[0];
     const vids = Data.templates("video");
     let tplId = (f && f.videoTemplateId && Data.template(f.videoTemplateId)) ? f.videoTemplateId : (vids[0] && vids[0].id);
-    const prefs = Object.assign(Store.getPosterPrefs(), { nameY: 80, fontSize: 70, photoSize: 200 });
+    const prefs = Object.assign(Store.getPosterPrefs(), { nameY: 83, fontSize: 70, photoSize: 190 });
     const canExport = window.SidtoVideo.VideoComposer.canExport();
 
     view.innerHTML = `

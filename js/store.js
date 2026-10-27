@@ -47,7 +47,7 @@
     KEYS,
     getProfile() { return Object.assign({ name: "", tagline: "", photo: "", region: "" }, read(KEYS.profile, {})); },
     saveProfile(p) { return write(KEYS.profile, p); },
-    getPosterPrefs() { return Object.assign({ nameY: 86, fontSize: 64, photoSize: 190, photoPlace: "left", color: "", showPhoto: true, showName: true }, read(KEYS.posterPrefs, {})); },
+    getPosterPrefs() { return Object.assign({ nameY: 85, fontSize: 64, photoSize: 190, photoPlace: "left", color: "", showPhoto: true, showName: true }, read(KEYS.posterPrefs, {})); },
     savePosterPrefs(p) { return write(KEYS.posterPrefs, p); },
     getDraft() { return read(KEYS.draft, null); },
     saveDraft(d) { return write(KEYS.draft, d); },

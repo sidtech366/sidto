@@ -2,9 +2,10 @@
  * Network-first means your GitHub edits show up on the next load
  * when online; the cached copy is only used when offline.
  * Bump VERSION if you ever need to force-clear old caches. */
-const VERSION = "sidto-v1";
+const VERSION = "sidto-v2";
 const SHELL = [
-  "./", "index.html", "admin.html", "css/style.css", "manifest.webmanifest",
+  "./", "index.html", "admin.html", "css/style.css", "css/fonts.css",
+  "assets/fonts/Mukta-Regular.woff", "assets/fonts/Mukta-SemiBold.woff", "assets/fonts/Mukta-ExtraBold.woff", "assets/fonts/YatraOne-Regular.woff", "manifest.webmanifest",
   "js/config.js", "js/i18n.js", "js/dates.js", "js/store.js", "js/data.js", "js/prompt.js",
   "js/imageService.js", "js/poster.js", "js/video.js", "js/app.js", "js/admin.js",
   "data/festivals.json", "assets/icons/icon-192.png", "assets/icons/icon.svg"

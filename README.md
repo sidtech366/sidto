@@ -25,7 +25,9 @@ Built with plain HTML, CSS and JavaScript. No build step, no framework, no paid 
 
 **Festival data is SAMPLE data.** Oct–Nov 2026 dates were cross-checked against public panchang listings for New Delhi, but they are **not guaranteed** and the list does **not** cover every festival. Records are marked `"verified": false` until you confirm them. The app shows a banner while sample data is in use.
 
-**Artwork:** all 8 poster backgrounds, 2 video templates and the icon were created originally for this project. You may use and change them freely in Sidto. Only add new art you made, commissioned or have a written licence for.
+**Artwork:** all 8 poster backgrounds (v2: gold frames, torans, glow and detailed motifs), 2 animated video templates and the icon were created originally for this project. You may use and change them freely in Sidto. Only add new art you made, commissioned or have a written licence for.
+
+**Fonts:** Mukta and Yatra One are bundled in `assets/fonts/` (SIL Open Font License, licence files included), so posters look the same offline and inside the APK.
 
 ---
 
@@ -40,6 +42,7 @@ sidto/
 ├── .nojekyll                Tells GitHub Pages to serve files as-is
 ├── README.md                This guide
 ├── css/style.css            All styles (mobile first, side rail on wide screens)
+├── css/fonts.css            Bundled Hindi/English fonts
 ├── js/
 │   ├── config.js            ← Settings you edit (PUBLIC — never put keys here)
 │   ├── i18n.js              Hindi & English interface text
@@ -55,8 +58,10 @@ sidto/
 ├── data/festivals.json      ← Festival records & template list (edit or replace)
 ├── assets/
 │   ├── icons/               App icons (SVG + PNG 192/512 + maskable)
+│   ├── fonts/               Mukta + Yatra One (OFL)
 │   ├── templates/           8 original poster backgrounds (SVG)
-│   └── videos/              2 original 6-second video templates (WebM) + preview frames
+│   └── videos/              2 original animated 6-second video templates (WebM) + preview frames
+├── tools/                   Python scripts that generated the artwork (optional, need a computer/Python)
 └── backend/                 NOT deployed by GitHub Pages — copy into the services below
     ├── cloudflare-worker/worker.js   AI image backend template (untested)
     └── apps-script/Code.gs           Google Sheet → festival JSON template (untested)
@@ -215,7 +220,7 @@ Admin edits are saved **only in that browser** as a draft. The app on the same p
 
 - **History length / upcoming window:** `js/config.js` → `historyDays`, `upcomingDays`.
 - **New interface words:** add the same key to `en` and `hi` in `js/i18n.js`.
-- **New poster background:** upload an image or SVG (portrait, ideally 1080×1350, leave the top ~20% and bottom ~25% calm for text) to `assets/templates/`, then add it in Admin → Templates.
+- **New poster background:** upload an image or SVG (portrait, ideally 1080×1350, leave the top ~25% and bottom ~25% calm for text) to `assets/templates/`, then add it in Admin → Templates. If the art has a garland at the top, add `"titleY": 262` to that template in `festivals.json` to move the title lower (default 196).
 - **New video template:** vertical 9:16, ≤ 10 seconds, ≤ ~3 MB, MP4 (H.264) or WebM, to `assets/videos/`.
 - **Daily/weekly items:** use repeat type `daily` or `weekly` (weekday 0 = Sunday).
 
@@ -228,4 +233,4 @@ Admin edits are saved **only in that browser** as a draft. The app on the same p
 | Share downloads instead | That browser can't share files; the poster is in Downloads. In the APK, use PWABuilder (not a plain WebView). |
 | Export video button greyed out | The browser lacks MediaRecorder. Update Chrome; preview still works. |
 | Photo won't save | Storage full — choose a smaller photo or remove uploaded admin images. |
-| Fonts look plain | Fonts load from Google Fonts on first visit; needs internet once. |
+| Fonts look plain | Fonts are bundled in assets/fonts — check that folder was uploaded. |

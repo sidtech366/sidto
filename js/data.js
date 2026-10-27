@@ -81,7 +81,7 @@
     },
     themeFor(f) {
       const tpl = this.template(f.templateId) || {};
-      return { textColor: tpl.textColor || "#FFFFFF", accent: tpl.accent || "#FFB020" };
+      return { textColor: tpl.textColor || "#FFFFFF", accent: tpl.accent || "#FFB020", titleY: tpl.titleY || 0 };
     },
 
     regions() {

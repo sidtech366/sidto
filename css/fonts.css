@@ -1,0 +1,6 @@
+/* Self-hosted fonts (SIL Open Font License — see assets/fonts/OFL-*.txt).
+   Bundled so posters look the same offline and inside the APK. */
+@font-face { font-family: "Mukta"; font-style: normal; font-weight: 400; font-display: swap; src: url("../assets/fonts/Mukta-Regular.woff") format("woff"); }
+@font-face { font-family: "Mukta"; font-style: normal; font-weight: 600; font-display: swap; src: url("../assets/fonts/Mukta-SemiBold.woff") format("woff"); }
+@font-face { font-family: "Mukta"; font-style: normal; font-weight: 800; font-display: swap; src: url("../assets/fonts/Mukta-ExtraBold.woff") format("woff"); }
+@font-face { font-family: "Yatra One"; font-style: normal; font-weight: 400; font-display: swap; src: url("../assets/fonts/YatraOne-Regular.woff") format("woff"); }

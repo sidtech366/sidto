@@ -7,218 +7,1039 @@
     "updatedAt": "2026-10-25"
   },
   "templates": [
-    { "id": "tpl-diya", "type": "image", "name": "Diya Glow", "url": "assets/templates/diya.svg", "active": true, "license": "Original artwork made for Sidto (free to use in this project)", "textColor": "#FFF6E0", "accent": "#FFB020" },
-    { "id": "tpl-moon", "type": "image", "name": "Full Moon Night", "url": "assets/templates/moon.svg", "active": true, "license": "Original artwork made for Sidto (free to use in this project)", "textColor": "#F4F1FF", "accent": "#C9B8FF" },
-    { "id": "tpl-sunrise", "type": "image", "name": "Sunrise", "url": "assets/templates/sunrise.svg", "active": true, "license": "Original artwork made for Sidto (free to use in this project)", "textColor": "#FFF8EC", "accent": "#FDBA74" },
-    { "id": "tpl-lotus", "type": "image", "name": "Lotus Pond", "url": "assets/templates/lotus.svg", "active": true, "license": "Original artwork made for Sidto (free to use in this project)", "textColor": "#FFF0F6", "accent": "#FF8FB8" },
-    { "id": "tpl-trishul", "type": "image", "name": "Trishul & Damru", "url": "assets/templates/trishul.svg", "active": true, "license": "Original artwork made for Sidto (free to use in this project)", "textColor": "#EAF6FF", "accent": "#7DD3FC" },
-    { "id": "tpl-feather", "type": "image", "name": "Peacock Feather", "url": "assets/templates/feather.svg", "active": true, "license": "Original artwork made for Sidto (free to use in this project)", "textColor": "#F0FFF8", "accent": "#34D399" },
-    { "id": "tpl-mandala", "type": "image", "name": "Rangoli Mandala", "url": "assets/templates/mandala.svg", "active": true, "license": "Original artwork made for Sidto (free to use in this project)", "textColor": "#FFF3E6", "accent": "#FDBA74" },
-    { "id": "tpl-kalash", "type": "image", "name": "Kalash & Mango Leaves", "url": "assets/templates/kalash.svg", "active": true, "license": "Original artwork made for Sidto (free to use in this project)", "textColor": "#FFF8E7", "accent": "#FACC15" },
-    { "id": "vid-glow", "type": "video", "name": "Golden Glow (6 s)", "url": "assets/videos/golden-glow.webm", "active": true, "license": "Original animation made for Sidto (free to use in this project)", "textColor": "#FFF6E0", "accent": "#FFB020" },
-    { "id": "vid-moon", "type": "video", "name": "Moonlight (6 s)", "url": "assets/videos/moonlight.webm", "active": true, "license": "Original animation made for Sidto (free to use in this project)", "textColor": "#F4F1FF", "accent": "#C9B8FF" }
+    {
+      "id": "tpl-diya",
+      "type": "image",
+      "name": "Diya Glow",
+      "url": "assets/templates/diya.svg",
+      "active": true,
+      "license": "Original artwork made for Sidto (free to use in this project)",
+      "textColor": "#FFF6E0",
+      "accent": "#FFB020",
+      "titleY": 262
+    },
+    {
+      "id": "tpl-moon",
+      "type": "image",
+      "name": "Full Moon Night",
+      "url": "assets/templates/moon.svg",
+      "active": true,
+      "license": "Original artwork made for Sidto (free to use in this project)",
+      "textColor": "#F4F1FF",
+      "accent": "#C9B8FF"
+    },
+    {
+      "id": "tpl-sunrise",
+      "type": "image",
+      "name": "Sunrise",
+      "url": "assets/templates/sunrise.svg",
+      "active": true,
+      "license": "Original artwork made for Sidto (free to use in this project)",
+      "textColor": "#FFF8EC",
+      "accent": "#FDBA74"
+    },
+    {
+      "id": "tpl-lotus",
+      "type": "image",
+      "name": "Lotus Pond",
+      "url": "assets/templates/lotus.svg",
+      "active": true,
+      "license": "Original artwork made for Sidto (free to use in this project)",
+      "textColor": "#FFF0F6",
+      "accent": "#FF8FB8"
+    },
+    {
+      "id": "tpl-trishul",
+      "type": "image",
+      "name": "Trishul & Damru",
+      "url": "assets/templates/trishul.svg",
+      "active": true,
+      "license": "Original artwork made for Sidto (free to use in this project)",
+      "textColor": "#EAF6FF",
+      "accent": "#7DD3FC"
+    },
+    {
+      "id": "tpl-feather",
+      "type": "image",
+      "name": "Peacock Feather",
+      "url": "assets/templates/feather.svg",
+      "active": true,
+      "license": "Original artwork made for Sidto (free to use in this project)",
+      "textColor": "#F0FFF8",
+      "accent": "#34D399"
+    },
+    {
+      "id": "tpl-mandala",
+      "type": "image",
+      "name": "Rangoli Mandala",
+      "url": "assets/templates/mandala.svg",
+      "active": true,
+      "license": "Original artwork made for Sidto (free to use in this project)",
+      "textColor": "#FFF3E6",
+      "accent": "#FDBA74"
+    },
+    {
+      "id": "tpl-kalash",
+      "type": "image",
+      "name": "Kalash & Mango Leaves",
+      "url": "assets/templates/kalash.svg",
+      "active": true,
+      "license": "Original artwork made for Sidto (free to use in this project)",
+      "textColor": "#FFF8E7",
+      "accent": "#FACC15",
+      "titleY": 262
+    },
+    {
+      "id": "vid-glow",
+      "type": "video",
+      "name": "Golden Glow (6 s)",
+      "url": "assets/videos/golden-glow.webm",
+      "active": true,
+      "license": "Original animation made for Sidto (free to use in this project)",
+      "textColor": "#FFF6E0",
+      "accent": "#FFB020"
+    },
+    {
+      "id": "vid-moon",
+      "type": "video",
+      "name": "Moonlight (6 s)",
+      "url": "assets/videos/moonlight.webm",
+      "active": true,
+      "license": "Original animation made for Sidto (free to use in this project)",
+      "textColor": "#F4F1FF",
+      "accent": "#C9B8FF"
+    }
   ],
   "festivals": [
     {
-      "id": "good-morning", "recurrence": "daily",
-      "name": { "en": "Good Morning", "hi": "सुप्रभात" },
-      "wish": { "en": "May your day be filled with light and blessings", "hi": "आपका दिन शुभ और मंगलमय हो" },
-      "deity": { "en": "Surya Dev", "hi": "सूर्य देव" },
-      "category": "good-morning", "tags": [], "languages": ["hi", "en"],
-      "templateId": "tpl-sunrise", "videoTemplateId": "vid-glow",
-      "imageUrl": "", "imageStatus": "template",
+      "id": "good-morning",
+      "recurrence": "daily",
+      "name": {
+        "en": "Good Morning",
+        "hi": "सुप्रभात"
+      },
+      "wish": {
+        "en": "May your day be filled with light and blessings",
+        "hi": "आपका दिन शुभ और मंगलमय हो"
+      },
+      "deity": {
+        "en": "Surya Dev",
+        "hi": "सूर्य देव"
+      },
+      "category": "good-morning",
+      "tags": [],
+      "languages": [
+        "hi",
+        "en"
+      ],
+      "templateId": "tpl-sunrise",
+      "videoTemplateId": "vid-glow",
+      "imageUrl": "",
+      "imageStatus": "template",
       "aiPrompt": "Golden sunrise over a calm river with lotus flowers, soft morning mist, temple silhouette, warm saffron light",
-      "status": "published", "verified": true, "createdAt": "2026-10-20"
+      "status": "published",
+      "verified": true,
+      "createdAt": "2026-10-20"
     },
     {
-      "id": "good-night", "recurrence": "daily",
-      "name": { "en": "Good Night", "hi": "शुभ रात्रि" },
-      "wish": { "en": "Rest peacefully under the Lord's blessings", "hi": "प्रभु की कृपा से आपकी रात सुखद हो" },
-      "deity": { "en": "Chandra Dev", "hi": "चंद्र देव" },
-      "category": "good-night", "tags": [], "languages": ["hi", "en"],
-      "templateId": "tpl-moon", "videoTemplateId": "vid-moon",
-      "imageUrl": "", "imageStatus": "template",
+      "id": "good-night",
+      "recurrence": "daily",
+      "name": {
+        "en": "Good Night",
+        "hi": "शुभ रात्रि"
+      },
+      "wish": {
+        "en": "Rest peacefully under the Lord's blessings",
+        "hi": "प्रभु की कृपा से आपकी रात सुखद हो"
+      },
+      "deity": {
+        "en": "Chandra Dev",
+        "hi": "चंद्र देव"
+      },
+      "category": "good-night",
+      "tags": [],
+      "languages": [
+        "hi",
+        "en"
+      ],
+      "templateId": "tpl-moon",
+      "videoTemplateId": "vid-moon",
+      "imageUrl": "",
+      "imageStatus": "template",
       "aiPrompt": "Serene full moon night sky with stars over a quiet village temple, deep indigo tones, soft glow",
-      "status": "published", "verified": true, "createdAt": "2026-10-20"
+      "status": "published",
+      "verified": true,
+      "createdAt": "2026-10-20"
     },
-    { "id": "weekday-sun", "recurrence": "weekly", "weekday": 0, "name": { "en": "Sunday — Surya Dev", "hi": "रविवार — सूर्य देव" }, "wish": { "en": "Jai Surya Dev", "hi": "जय सूर्य देव" }, "deity": { "en": "Surya Dev", "hi": "सूर्य देव" }, "category": "deity", "tags": ["weekday"], "languages": ["hi", "en"], "templateId": "tpl-sunrise", "videoTemplateId": "vid-glow", "imageUrl": "", "imageStatus": "template", "aiPrompt": "Radiant sun disc with seven-horse chariot motif, golden rays, devotional art", "status": "published", "verified": true, "createdAt": "2026-10-20" },
-    { "id": "weekday-mon", "recurrence": "weekly", "weekday": 1, "name": { "en": "Monday — Mahadev", "hi": "सोमवार — महादेव" }, "wish": { "en": "Har Har Mahadev", "hi": "हर हर महादेव" }, "deity": { "en": "Lord Shiva", "hi": "भगवान शिव" }, "category": "deity", "tags": ["weekday", "shiva"], "languages": ["hi", "en"], "templateId": "tpl-trishul", "videoTemplateId": "vid-moon", "imageUrl": "", "imageStatus": "template", "aiPrompt": "Trishul and damru against snowy Kailash mountains, crescent moon, blue twilight", "status": "published", "verified": true, "createdAt": "2026-10-20" },
-    { "id": "weekday-tue", "recurrence": "weekly", "weekday": 2, "name": { "en": "Tuesday — Hanuman Ji", "hi": "मंगलवार — हनुमान जी" }, "wish": { "en": "Jai Bajrangbali", "hi": "जय बजरंगबली" }, "deity": { "en": "Lord Hanuman", "hi": "हनुमान जी" }, "category": "deity", "tags": ["weekday", "hanuman"], "languages": ["hi", "en"], "templateId": "tpl-mandala", "videoTemplateId": "vid-glow", "imageUrl": "", "imageStatus": "template", "aiPrompt": "Saffron flag and golden gada on a hilltop at sunrise, devotional atmosphere", "status": "published", "verified": true, "createdAt": "2026-10-20" },
-    { "id": "weekday-wed", "recurrence": "weekly", "weekday": 3, "name": { "en": "Wednesday — Ganesh Ji", "hi": "बुधवार — गणेश जी" }, "wish": { "en": "Ganpati Bappa Morya", "hi": "गणपति बप्पा मोरया" }, "deity": { "en": "Lord Ganesha", "hi": "गणेश जी" }, "category": "deity", "tags": ["weekday", "ganesha"], "languages": ["hi", "en"], "templateId": "tpl-kalash", "videoTemplateId": "vid-glow", "imageUrl": "", "imageStatus": "template", "aiPrompt": "Modak offerings, marigold garlands and durva grass on a brass plate, warm light", "status": "published", "verified": true, "createdAt": "2026-10-20" },
-    { "id": "weekday-thu", "recurrence": "weekly", "weekday": 4, "name": { "en": "Thursday — Shri Hari", "hi": "गुरुवार — श्री हरि" }, "wish": { "en": "Om Namo Bhagavate Vasudevaya", "hi": "ॐ नमो भगवते वासुदेवाय" }, "deity": { "en": "Lord Vishnu", "hi": "भगवान विष्णु" }, "category": "deity", "tags": ["weekday", "vishnu"], "languages": ["hi", "en"], "templateId": "tpl-lotus", "videoTemplateId": "vid-glow", "imageUrl": "", "imageStatus": "template", "aiPrompt": "Shankh and chakra symbols floating above a cosmic ocean with lotus, yellow and blue palette", "status": "published", "verified": true, "createdAt": "2026-10-20" },
-    { "id": "weekday-fri", "recurrence": "weekly", "weekday": 5, "name": { "en": "Friday — Maa Lakshmi", "hi": "शुक्रवार — माँ लक्ष्मी" }, "wish": { "en": "Jai Maa Lakshmi", "hi": "जय माँ लक्ष्मी" }, "deity": { "en": "Goddess Lakshmi", "hi": "माँ लक्ष्मी" }, "category": "deity", "tags": ["weekday", "lakshmi"], "languages": ["hi", "en"], "templateId": "tpl-lotus", "videoTemplateId": "vid-glow", "imageUrl": "", "imageStatus": "template", "aiPrompt": "Pink lotus with golden coins and diyas, rich red and gold devotional palette", "status": "published", "verified": true, "createdAt": "2026-10-20" },
-    { "id": "weekday-sat", "recurrence": "weekly", "weekday": 6, "name": { "en": "Saturday — Shani Dev", "hi": "शनिवार — शनि देव" }, "wish": { "en": "Jai Shani Dev", "hi": "जय शनि देव" }, "deity": { "en": "Shani Dev", "hi": "शनि देव" }, "category": "deity", "tags": ["weekday"], "languages": ["hi", "en"], "templateId": "tpl-diya", "videoTemplateId": "vid-moon", "imageUrl": "", "imageStatus": "template", "aiPrompt": "Mustard oil diya glowing under a peepal tree at dusk, deep blue and amber", "status": "published", "verified": true, "createdAt": "2026-10-20" },
-
     {
-      "id": "dussehra-2026", "recurrence": "once", "date": "2026-10-20", "year": 2026,
-      "name": { "en": "Dussehra", "hi": "दशहरा" },
-      "wish": { "en": "Happy Vijayadashami — may good always win", "hi": "विजयादशमी की हार्दिक शुभकामनाएँ" },
-      "deity": { "en": "Lord Rama", "hi": "भगवान श्रीराम" },
-      "category": "festival", "tags": ["dussehra", "navratri"], "languages": ["hi", "en"],
-      "templateId": "tpl-mandala", "videoTemplateId": "vid-glow", "imageUrl": "", "imageStatus": "template",
+      "id": "weekday-sun",
+      "recurrence": "weekly",
+      "weekday": 0,
+      "name": {
+        "en": "Sunday — Surya Dev",
+        "hi": "रविवार — सूर्य देव"
+      },
+      "wish": {
+        "en": "Jai Surya Dev",
+        "hi": "जय सूर्य देव"
+      },
+      "deity": {
+        "en": "Surya Dev",
+        "hi": "सूर्य देव"
+      },
+      "category": "deity",
+      "tags": [
+        "weekday"
+      ],
+      "languages": [
+        "hi",
+        "en"
+      ],
+      "templateId": "tpl-sunrise",
+      "videoTemplateId": "vid-glow",
+      "imageUrl": "",
+      "imageStatus": "template",
+      "aiPrompt": "Radiant sun disc with seven-horse chariot motif, golden rays, devotional art",
+      "status": "published",
+      "verified": true,
+      "createdAt": "2026-10-20"
+    },
+    {
+      "id": "weekday-mon",
+      "recurrence": "weekly",
+      "weekday": 1,
+      "name": {
+        "en": "Monday — Mahadev",
+        "hi": "सोमवार — महादेव"
+      },
+      "wish": {
+        "en": "Har Har Mahadev",
+        "hi": "हर हर महादेव"
+      },
+      "deity": {
+        "en": "Lord Shiva",
+        "hi": "भगवान शिव"
+      },
+      "category": "deity",
+      "tags": [
+        "weekday",
+        "shiva"
+      ],
+      "languages": [
+        "hi",
+        "en"
+      ],
+      "templateId": "tpl-trishul",
+      "videoTemplateId": "vid-moon",
+      "imageUrl": "",
+      "imageStatus": "template",
+      "aiPrompt": "Trishul and damru against snowy Kailash mountains, crescent moon, blue twilight",
+      "status": "published",
+      "verified": true,
+      "createdAt": "2026-10-20"
+    },
+    {
+      "id": "weekday-tue",
+      "recurrence": "weekly",
+      "weekday": 2,
+      "name": {
+        "en": "Tuesday — Hanuman Ji",
+        "hi": "मंगलवार — हनुमान जी"
+      },
+      "wish": {
+        "en": "Jai Bajrangbali",
+        "hi": "जय बजरंगबली"
+      },
+      "deity": {
+        "en": "Lord Hanuman",
+        "hi": "हनुमान जी"
+      },
+      "category": "deity",
+      "tags": [
+        "weekday",
+        "hanuman"
+      ],
+      "languages": [
+        "hi",
+        "en"
+      ],
+      "templateId": "tpl-mandala",
+      "videoTemplateId": "vid-glow",
+      "imageUrl": "",
+      "imageStatus": "template",
+      "aiPrompt": "Saffron flag and golden gada on a hilltop at sunrise, devotional atmosphere",
+      "status": "published",
+      "verified": true,
+      "createdAt": "2026-10-20"
+    },
+    {
+      "id": "weekday-wed",
+      "recurrence": "weekly",
+      "weekday": 3,
+      "name": {
+        "en": "Wednesday — Ganesh Ji",
+        "hi": "बुधवार — गणेश जी"
+      },
+      "wish": {
+        "en": "Ganpati Bappa Morya",
+        "hi": "गणपति बप्पा मोरया"
+      },
+      "deity": {
+        "en": "Lord Ganesha",
+        "hi": "गणेश जी"
+      },
+      "category": "deity",
+      "tags": [
+        "weekday",
+        "ganesha"
+      ],
+      "languages": [
+        "hi",
+        "en"
+      ],
+      "templateId": "tpl-kalash",
+      "videoTemplateId": "vid-glow",
+      "imageUrl": "",
+      "imageStatus": "template",
+      "aiPrompt": "Modak offerings, marigold garlands and durva grass on a brass plate, warm light",
+      "status": "published",
+      "verified": true,
+      "createdAt": "2026-10-20"
+    },
+    {
+      "id": "weekday-thu",
+      "recurrence": "weekly",
+      "weekday": 4,
+      "name": {
+        "en": "Thursday — Shri Hari",
+        "hi": "गुरुवार — श्री हरि"
+      },
+      "wish": {
+        "en": "Om Namo Bhagavate Vasudevaya",
+        "hi": "ॐ नमो भगवते वासुदेवाय"
+      },
+      "deity": {
+        "en": "Lord Vishnu",
+        "hi": "भगवान विष्णु"
+      },
+      "category": "deity",
+      "tags": [
+        "weekday",
+        "vishnu"
+      ],
+      "languages": [
+        "hi",
+        "en"
+      ],
+      "templateId": "tpl-lotus",
+      "videoTemplateId": "vid-glow",
+      "imageUrl": "",
+      "imageStatus": "template",
+      "aiPrompt": "Shankh and chakra symbols floating above a cosmic ocean with lotus, yellow and blue palette",
+      "status": "published",
+      "verified": true,
+      "createdAt": "2026-10-20"
+    },
+    {
+      "id": "weekday-fri",
+      "recurrence": "weekly",
+      "weekday": 5,
+      "name": {
+        "en": "Friday — Maa Lakshmi",
+        "hi": "शुक्रवार — माँ लक्ष्मी"
+      },
+      "wish": {
+        "en": "Jai Maa Lakshmi",
+        "hi": "जय माँ लक्ष्मी"
+      },
+      "deity": {
+        "en": "Goddess Lakshmi",
+        "hi": "माँ लक्ष्मी"
+      },
+      "category": "deity",
+      "tags": [
+        "weekday",
+        "lakshmi"
+      ],
+      "languages": [
+        "hi",
+        "en"
+      ],
+      "templateId": "tpl-lotus",
+      "videoTemplateId": "vid-glow",
+      "imageUrl": "",
+      "imageStatus": "template",
+      "aiPrompt": "Pink lotus with golden coins and diyas, rich red and gold devotional palette",
+      "status": "published",
+      "verified": true,
+      "createdAt": "2026-10-20"
+    },
+    {
+      "id": "weekday-sat",
+      "recurrence": "weekly",
+      "weekday": 6,
+      "name": {
+        "en": "Saturday — Shani Dev",
+        "hi": "शनिवार — शनि देव"
+      },
+      "wish": {
+        "en": "Jai Shani Dev",
+        "hi": "जय शनि देव"
+      },
+      "deity": {
+        "en": "Shani Dev",
+        "hi": "शनि देव"
+      },
+      "category": "deity",
+      "tags": [
+        "weekday"
+      ],
+      "languages": [
+        "hi",
+        "en"
+      ],
+      "templateId": "tpl-diya",
+      "videoTemplateId": "vid-moon",
+      "imageUrl": "",
+      "imageStatus": "template",
+      "aiPrompt": "Mustard oil diya glowing under a peepal tree at dusk, deep blue and amber",
+      "status": "published",
+      "verified": true,
+      "createdAt": "2026-10-20"
+    },
+    {
+      "id": "dussehra-2026",
+      "recurrence": "once",
+      "date": "2026-10-20",
+      "year": 2026,
+      "name": {
+        "en": "Dussehra",
+        "hi": "दशहरा"
+      },
+      "wish": {
+        "en": "Happy Vijayadashami — may good always win",
+        "hi": "विजयादशमी की हार्दिक शुभकामनाएँ"
+      },
+      "deity": {
+        "en": "Lord Rama",
+        "hi": "भगवान श्रीराम"
+      },
+      "category": "festival",
+      "tags": [
+        "dussehra",
+        "navratri"
+      ],
+      "languages": [
+        "hi",
+        "en"
+      ],
+      "templateId": "tpl-mandala",
+      "videoTemplateId": "vid-glow",
+      "imageUrl": "",
+      "imageStatus": "template",
       "aiPrompt": "Bow and arrow silhouette against a fiery sunset sky, victory of good over evil, festive marigolds",
       "showDaysBefore": 5,
       "regional": [
-        { "region": "West Bengal", "date": "2026-10-21", "note": "Bengal Vijayadashami listed on 21 Oct" },
-        { "region": "Karnataka", "date": "2026-10-21", "note": "Mysore Dasara listed on 21 Oct" }
+        {
+          "region": "West Bengal",
+          "date": "2026-10-21",
+          "note": "Bengal Vijayadashami listed on 21 Oct"
+        },
+        {
+          "region": "Karnataka",
+          "date": "2026-10-21",
+          "note": "Mysore Dasara listed on 21 Oct"
+        }
       ],
-      "status": "published", "verified": false, "source": "Public panchang listings, New Delhi", "createdAt": "2026-10-10"
+      "status": "published",
+      "verified": false,
+      "source": "Public panchang listings, New Delhi",
+      "createdAt": "2026-10-10"
     },
     {
-      "id": "papankusha-ekadashi-2026", "recurrence": "once", "date": "2026-10-22", "year": 2026,
-      "name": { "en": "Papankusha Ekadashi", "hi": "पापांकुशा एकादशी" },
-      "wish": { "en": "May Shri Hari bless your vrat", "hi": "श्री हरि आपका व्रत सफल करें" },
-      "deity": { "en": "Lord Vishnu", "hi": "भगवान विष्णु" },
-      "category": "vrat", "tags": ["ekadashi"], "languages": ["hi", "en"],
-      "templateId": "tpl-lotus", "videoTemplateId": "vid-glow", "imageUrl": "", "imageStatus": "template",
+      "id": "papankusha-ekadashi-2026",
+      "recurrence": "once",
+      "date": "2026-10-22",
+      "year": 2026,
+      "name": {
+        "en": "Papankusha Ekadashi",
+        "hi": "पापांकुशा एकादशी"
+      },
+      "wish": {
+        "en": "May Shri Hari bless your vrat",
+        "hi": "श्री हरि आपका व्रत सफल करें"
+      },
+      "deity": {
+        "en": "Lord Vishnu",
+        "hi": "भगवान विष्णु"
+      },
+      "category": "vrat",
+      "tags": [
+        "ekadashi"
+      ],
+      "languages": [
+        "hi",
+        "en"
+      ],
+      "templateId": "tpl-lotus",
+      "videoTemplateId": "vid-glow",
+      "imageUrl": "",
+      "imageStatus": "template",
       "aiPrompt": "Tulsi plant with a glowing diya, lotus and conch shell, calm devotional morning",
-      "showDaysBefore": 3, "regional": [],
-      "status": "published", "verified": false, "source": "Drik Panchang Ekadashi list 2026 (New Delhi)", "createdAt": "2026-10-10"
+      "showDaysBefore": 3,
+      "regional": [],
+      "status": "published",
+      "verified": false,
+      "source": "Drik Panchang Ekadashi list 2026 (New Delhi)",
+      "createdAt": "2026-10-10"
     },
     {
-      "id": "shukra-pradosh-2026-10", "recurrence": "once", "date": "2026-10-23", "year": 2026,
-      "name": { "en": "Shukra Pradosh Vrat", "hi": "शुक्र प्रदोष व्रत" },
-      "wish": { "en": "Om Namah Shivaya", "hi": "ॐ नमः शिवाय" },
-      "deity": { "en": "Lord Shiva", "hi": "भगवान शिव" },
-      "category": "vrat", "tags": ["pradosh", "shiva"], "languages": ["hi", "en"],
-      "templateId": "tpl-trishul", "videoTemplateId": "vid-moon", "imageUrl": "", "imageStatus": "template",
+      "id": "shukra-pradosh-2026-10",
+      "recurrence": "once",
+      "date": "2026-10-23",
+      "year": 2026,
+      "name": {
+        "en": "Shukra Pradosh Vrat",
+        "hi": "शुक्र प्रदोष व्रत"
+      },
+      "wish": {
+        "en": "Om Namah Shivaya",
+        "hi": "ॐ नमः शिवाय"
+      },
+      "deity": {
+        "en": "Lord Shiva",
+        "hi": "भगवान शिव"
+      },
+      "category": "vrat",
+      "tags": [
+        "pradosh",
+        "shiva"
+      ],
+      "languages": [
+        "hi",
+        "en"
+      ],
+      "templateId": "tpl-trishul",
+      "videoTemplateId": "vid-moon",
+      "imageUrl": "",
+      "imageStatus": "template",
       "aiPrompt": "Shivling with bilva leaves and flowing water at twilight, oil lamps, soft blue glow",
-      "showDaysBefore": 2, "regional": [],
-      "status": "published", "verified": false, "source": "Public panchang listings, New Delhi", "createdAt": "2026-10-10"
+      "showDaysBefore": 2,
+      "regional": [],
+      "status": "published",
+      "verified": false,
+      "source": "Public panchang listings, New Delhi",
+      "createdAt": "2026-10-10"
     },
     {
-      "id": "sharad-purnima-2026", "recurrence": "once", "date": "2026-10-25", "year": 2026,
-      "name": { "en": "Sharad Purnima", "hi": "शरद पूर्णिमा" },
-      "wish": { "en": "May the full moon shower health and happiness", "hi": "शरद पूर्णिमा की हार्दिक शुभकामनाएँ" },
-      "deity": { "en": "Goddess Lakshmi", "hi": "माँ लक्ष्मी" },
-      "category": "festival", "tags": ["purnima"], "languages": ["hi", "en"],
-      "templateId": "tpl-moon", "videoTemplateId": "vid-moon", "imageUrl": "", "imageStatus": "template",
+      "id": "sharad-purnima-2026",
+      "recurrence": "once",
+      "date": "2026-10-25",
+      "year": 2026,
+      "name": {
+        "en": "Sharad Purnima",
+        "hi": "शरद पूर्णिमा"
+      },
+      "wish": {
+        "en": "May the full moon shower health and happiness",
+        "hi": "शरद पूर्णिमा की हार्दिक शुभकामनाएँ"
+      },
+      "deity": {
+        "en": "Goddess Lakshmi",
+        "hi": "माँ लक्ष्मी"
+      },
+      "category": "festival",
+      "tags": [
+        "purnima"
+      ],
+      "languages": [
+        "hi",
+        "en"
+      ],
+      "templateId": "tpl-moon",
+      "videoTemplateId": "vid-moon",
+      "imageUrl": "",
+      "imageStatus": "template",
       "aiPrompt": "Bright full moon over a river, a bowl of kheer on a rooftop, white flowers, silver moonlight",
       "showDaysBefore": 4,
       "regional": [
-        { "region": "Odisha", "date": "2026-10-26", "note": "Some Odia panjikas list Kumar Purnima on 26 Oct" }
+        {
+          "region": "Odisha",
+          "date": "2026-10-26",
+          "note": "Some Odia panjikas list Kumar Purnima on 26 Oct"
+        }
       ],
-      "status": "published", "verified": false, "source": "Public panchang listings, New Delhi", "createdAt": "2026-10-10"
+      "status": "published",
+      "verified": false,
+      "source": "Public panchang listings, New Delhi",
+      "createdAt": "2026-10-10"
     },
     {
-      "id": "valmiki-jayanti-2026", "recurrence": "once", "date": "2026-10-26", "year": 2026,
-      "name": { "en": "Valmiki Jayanti", "hi": "वाल्मीकि जयंती" },
-      "wish": { "en": "Remembering Maharishi Valmiki", "hi": "महर्षि वाल्मीकि जयंती की शुभकामनाएँ" },
-      "deity": { "en": "Maharishi Valmiki", "hi": "महर्षि वाल्मीकि" },
-      "category": "jayanti", "tags": [], "languages": ["hi", "en"],
-      "templateId": "tpl-kalash", "videoTemplateId": "vid-glow", "imageUrl": "", "imageStatus": "template",
+      "id": "valmiki-jayanti-2026",
+      "recurrence": "once",
+      "date": "2026-10-26",
+      "year": 2026,
+      "name": {
+        "en": "Valmiki Jayanti",
+        "hi": "वाल्मीकि जयंती"
+      },
+      "wish": {
+        "en": "Remembering Maharishi Valmiki",
+        "hi": "महर्षि वाल्मीकि जयंती की शुभकामनाएँ"
+      },
+      "deity": {
+        "en": "Maharishi Valmiki",
+        "hi": "महर्षि वाल्मीकि"
+      },
+      "category": "jayanti",
+      "tags": [],
+      "languages": [
+        "hi",
+        "en"
+      ],
+      "templateId": "tpl-kalash",
+      "videoTemplateId": "vid-glow",
+      "imageUrl": "",
+      "imageStatus": "template",
       "aiPrompt": "Ancient palm-leaf manuscript and quill beside a forest ashram, golden hour, peaceful",
-      "showDaysBefore": 3, "regional": [],
-      "status": "published", "verified": false, "source": "Public panchang listings, New Delhi", "createdAt": "2026-10-10"
+      "showDaysBefore": 3,
+      "regional": [],
+      "status": "published",
+      "verified": false,
+      "source": "Public panchang listings, New Delhi",
+      "createdAt": "2026-10-10"
     },
     {
-      "id": "karwa-chauth-2026", "recurrence": "once", "date": "2026-10-29", "year": 2026,
-      "name": { "en": "Karwa Chauth", "hi": "करवा चौथ" },
-      "wish": { "en": "Wishing you a blessed Karwa Chauth", "hi": "करवा चौथ की हार्दिक शुभकामनाएँ" },
-      "deity": { "en": "Maa Gauri & Chandra Dev", "hi": "माँ गौरी एवं चंद्र देव" },
-      "category": "vrat", "tags": ["karwa-chauth"], "languages": ["hi", "en"],
-      "templateId": "tpl-moon", "videoTemplateId": "vid-moon", "imageUrl": "", "imageStatus": "template",
+      "id": "karwa-chauth-2026",
+      "recurrence": "once",
+      "date": "2026-10-29",
+      "year": 2026,
+      "name": {
+        "en": "Karwa Chauth",
+        "hi": "करवा चौथ"
+      },
+      "wish": {
+        "en": "Wishing you a blessed Karwa Chauth",
+        "hi": "करवा चौथ की हार्दिक शुभकामनाएँ"
+      },
+      "deity": {
+        "en": "Maa Gauri & Chandra Dev",
+        "hi": "माँ गौरी एवं चंद्र देव"
+      },
+      "category": "vrat",
+      "tags": [
+        "karwa-chauth"
+      ],
+      "languages": [
+        "hi",
+        "en"
+      ],
+      "templateId": "tpl-moon",
+      "videoTemplateId": "vid-moon",
+      "imageUrl": "",
+      "imageStatus": "template",
       "aiPrompt": "Decorated puja thali with a sieve, diya and karwa pot under a rising moon, red and gold",
       "showDaysBefore": 7,
       "regional": [
-        { "region": "USA / Canada", "date": "2026-10-28", "note": "Local moonrise shifts the date for North America" }
+        {
+          "region": "USA / Canada",
+          "date": "2026-10-28",
+          "note": "Local moonrise shifts the date for North America"
+        }
       ],
-      "status": "published", "verified": false, "source": "Public panchang listings, New Delhi", "createdAt": "2026-10-10"
+      "status": "published",
+      "verified": false,
+      "source": "Public panchang listings, New Delhi",
+      "createdAt": "2026-10-10"
     },
     {
-      "id": "ahoi-ashtami-2026", "recurrence": "once", "date": "2026-11-01", "year": 2026,
-      "name": { "en": "Ahoi Ashtami", "hi": "अहोई अष्टमी" },
-      "wish": { "en": "May Ahoi Mata protect your children", "hi": "अहोई माता आपकी संतान की रक्षा करें" },
-      "deity": { "en": "Ahoi Mata", "hi": "अहोई माता" },
-      "category": "vrat", "tags": [], "languages": ["hi", "en"],
-      "templateId": "tpl-mandala", "videoTemplateId": "vid-moon", "imageUrl": "", "imageStatus": "template",
+      "id": "ahoi-ashtami-2026",
+      "recurrence": "once",
+      "date": "2026-11-01",
+      "year": 2026,
+      "name": {
+        "en": "Ahoi Ashtami",
+        "hi": "अहोई अष्टमी"
+      },
+      "wish": {
+        "en": "May Ahoi Mata protect your children",
+        "hi": "अहोई माता आपकी संतान की रक्षा करें"
+      },
+      "deity": {
+        "en": "Ahoi Mata",
+        "hi": "अहोई माता"
+      },
+      "category": "vrat",
+      "tags": [],
+      "languages": [
+        "hi",
+        "en"
+      ],
+      "templateId": "tpl-mandala",
+      "videoTemplateId": "vid-moon",
+      "imageUrl": "",
+      "imageStatus": "template",
       "aiPrompt": "Evening sky with stars, a lit diya and a water-filled karwa, folk-art border",
-      "showDaysBefore": 4, "regional": [],
-      "status": "published", "verified": false, "source": "Public panchang listings, New Delhi", "createdAt": "2026-10-10"
+      "showDaysBefore": 4,
+      "regional": [],
+      "status": "published",
+      "verified": false,
+      "source": "Public panchang listings, New Delhi",
+      "createdAt": "2026-10-10"
     },
     {
-      "id": "rama-ekadashi-2026", "recurrence": "once", "date": "2026-11-05", "year": 2026,
-      "name": { "en": "Rama Ekadashi", "hi": "रमा एकादशी" },
-      "wish": { "en": "May Shri Hari bless your vrat", "hi": "श्री हरि आपका व्रत सफल करें" },
-      "deity": { "en": "Lord Vishnu", "hi": "भगवान विष्णु" },
-      "category": "vrat", "tags": ["ekadashi"], "languages": ["hi", "en"],
-      "templateId": "tpl-lotus", "videoTemplateId": "vid-glow", "imageUrl": "", "imageStatus": "template",
+      "id": "rama-ekadashi-2026",
+      "recurrence": "once",
+      "date": "2026-11-05",
+      "year": 2026,
+      "name": {
+        "en": "Rama Ekadashi",
+        "hi": "रमा एकादशी"
+      },
+      "wish": {
+        "en": "May Shri Hari bless your vrat",
+        "hi": "श्री हरि आपका व्रत सफल करें"
+      },
+      "deity": {
+        "en": "Lord Vishnu",
+        "hi": "भगवान विष्णु"
+      },
+      "category": "vrat",
+      "tags": [
+        "ekadashi"
+      ],
+      "languages": [
+        "hi",
+        "en"
+      ],
+      "templateId": "tpl-lotus",
+      "videoTemplateId": "vid-glow",
+      "imageUrl": "",
+      "imageStatus": "template",
       "aiPrompt": "Tulsi leaves, yellow flowers and a lit lamp before a lotus pond, sacred morning light",
-      "showDaysBefore": 3, "regional": [],
-      "status": "published", "verified": false, "source": "Drik Panchang Ekadashi list 2026 (New Delhi)", "createdAt": "2026-10-10"
+      "showDaysBefore": 3,
+      "regional": [],
+      "status": "published",
+      "verified": false,
+      "source": "Drik Panchang Ekadashi list 2026 (New Delhi)",
+      "createdAt": "2026-10-10"
     },
     {
-      "id": "dhanteras-2026", "recurrence": "once", "date": "2026-11-06", "year": 2026,
-      "name": { "en": "Dhanteras", "hi": "धनतेरस" },
-      "wish": { "en": "Happy Dhanteras — wealth and good health to you", "hi": "धनतेरस की हार्दिक शुभकामनाएँ" },
-      "deity": { "en": "Dhanvantari & Kuber", "hi": "धन्वंतरि एवं कुबेर" },
-      "category": "festival", "tags": ["diwali"], "languages": ["hi", "en"],
-      "templateId": "tpl-kalash", "videoTemplateId": "vid-glow", "imageUrl": "", "imageStatus": "template",
+      "id": "dhanteras-2026",
+      "recurrence": "once",
+      "date": "2026-11-06",
+      "year": 2026,
+      "name": {
+        "en": "Dhanteras",
+        "hi": "धनतेरस"
+      },
+      "wish": {
+        "en": "Happy Dhanteras — wealth and good health to you",
+        "hi": "धनतेरस की हार्दिक शुभकामनाएँ"
+      },
+      "deity": {
+        "en": "Dhanvantari & Kuber",
+        "hi": "धन्वंतरि एवं कुबेर"
+      },
+      "category": "festival",
+      "tags": [
+        "diwali"
+      ],
+      "languages": [
+        "hi",
+        "en"
+      ],
+      "templateId": "tpl-kalash",
+      "videoTemplateId": "vid-glow",
+      "imageUrl": "",
+      "imageStatus": "template",
       "aiPrompt": "Brass kalash with gold coins, new utensils and thirteen diyas, rich festive glow",
-      "showDaysBefore": 7, "regional": [],
-      "status": "published", "verified": false, "source": "Public listings for Diwali 2026", "createdAt": "2026-10-10"
+      "showDaysBefore": 7,
+      "regional": [],
+      "status": "published",
+      "verified": false,
+      "source": "Public listings for Diwali 2026",
+      "createdAt": "2026-10-10"
     },
     {
-      "id": "diwali-2026", "recurrence": "once", "date": "2026-11-08", "year": 2026,
-      "name": { "en": "Diwali", "hi": "दीपावली" },
-      "wish": { "en": "Happy Diwali — may light fill your home", "hi": "दीपावली की हार्दिक शुभकामनाएँ" },
-      "deity": { "en": "Goddess Lakshmi & Lord Ganesha", "hi": "माँ लक्ष्मी एवं गणेश जी" },
-      "category": "festival", "tags": ["diwali"], "languages": ["hi", "en"],
-      "templateId": "tpl-diya", "videoTemplateId": "vid-glow", "imageUrl": "", "imageStatus": "template",
+      "id": "diwali-2026",
+      "recurrence": "once",
+      "date": "2026-11-08",
+      "year": 2026,
+      "name": {
+        "en": "Diwali",
+        "hi": "दीपावली"
+      },
+      "wish": {
+        "en": "Happy Diwali — may light fill your home",
+        "hi": "दीपावली की हार्दिक शुभकामनाएँ"
+      },
+      "deity": {
+        "en": "Goddess Lakshmi & Lord Ganesha",
+        "hi": "माँ लक्ष्मी एवं गणेश जी"
+      },
+      "category": "festival",
+      "tags": [
+        "diwali"
+      ],
+      "languages": [
+        "hi",
+        "en"
+      ],
+      "templateId": "tpl-diya",
+      "videoTemplateId": "vid-glow",
+      "imageUrl": "",
+      "imageStatus": "template",
       "aiPrompt": "Rows of glowing clay diyas on a rangoli-decorated courtyard at night, marigold torans, fireworks in the distance",
-      "showDaysBefore": 14, "regional": [],
-      "status": "published", "verified": false, "source": "Public listings for Diwali 2026", "createdAt": "2026-10-10"
+      "showDaysBefore": 14,
+      "regional": [],
+      "status": "published",
+      "verified": false,
+      "source": "Public listings for Diwali 2026",
+      "createdAt": "2026-10-10"
     },
     {
-      "id": "govardhan-puja-2026", "recurrence": "once", "date": "2026-11-10", "year": 2026,
-      "name": { "en": "Govardhan Puja", "hi": "गोवर्धन पूजा" },
-      "wish": { "en": "Jai Shri Krishna — Happy Govardhan Puja", "hi": "गोवर्धन पूजा की हार्दिक शुभकामनाएँ" },
-      "deity": { "en": "Lord Krishna", "hi": "भगवान श्रीकृष्ण" },
-      "category": "festival", "tags": ["diwali", "krishna"], "languages": ["hi", "en"],
-      "templateId": "tpl-feather", "videoTemplateId": "vid-glow", "imageUrl": "", "imageStatus": "template",
+      "id": "govardhan-puja-2026",
+      "recurrence": "once",
+      "date": "2026-11-10",
+      "year": 2026,
+      "name": {
+        "en": "Govardhan Puja",
+        "hi": "गोवर्धन पूजा"
+      },
+      "wish": {
+        "en": "Jai Shri Krishna — Happy Govardhan Puja",
+        "hi": "गोवर्धन पूजा की हार्दिक शुभकामनाएँ"
+      },
+      "deity": {
+        "en": "Lord Krishna",
+        "hi": "भगवान श्रीकृष्ण"
+      },
+      "category": "festival",
+      "tags": [
+        "diwali",
+        "krishna"
+      ],
+      "languages": [
+        "hi",
+        "en"
+      ],
+      "templateId": "tpl-feather",
+      "videoTemplateId": "vid-glow",
+      "imageUrl": "",
+      "imageStatus": "template",
       "aiPrompt": "Peacock feather and flute over green hills, annakut food offerings, joyful village scene",
-      "showDaysBefore": 5, "regional": [],
-      "status": "published", "verified": false, "source": "Public listings for Diwali 2026", "createdAt": "2026-10-10"
+      "showDaysBefore": 5,
+      "regional": [],
+      "status": "published",
+      "verified": false,
+      "source": "Public listings for Diwali 2026",
+      "createdAt": "2026-10-10"
     },
     {
-      "id": "bhai-dooj-2026", "recurrence": "once", "date": "2026-11-11", "year": 2026,
-      "name": { "en": "Bhai Dooj", "hi": "भाई दूज" },
-      "wish": { "en": "Happy Bhai Dooj to my dear sibling", "hi": "भाई दूज की हार्दिक शुभकामनाएँ" },
-      "deity": { "en": "Yamraj & Yamuna", "hi": "यमराज एवं यमुना" },
-      "category": "festival", "tags": ["diwali"], "languages": ["hi", "en"],
-      "templateId": "tpl-mandala", "videoTemplateId": "vid-glow", "imageUrl": "", "imageStatus": "template",
+      "id": "bhai-dooj-2026",
+      "recurrence": "once",
+      "date": "2026-11-11",
+      "year": 2026,
+      "name": {
+        "en": "Bhai Dooj",
+        "hi": "भाई दूज"
+      },
+      "wish": {
+        "en": "Happy Bhai Dooj to my dear sibling",
+        "hi": "भाई दूज की हार्दिक शुभकामनाएँ"
+      },
+      "deity": {
+        "en": "Yamraj & Yamuna",
+        "hi": "यमराज एवं यमुना"
+      },
+      "category": "festival",
+      "tags": [
+        "diwali"
+      ],
+      "languages": [
+        "hi",
+        "en"
+      ],
+      "templateId": "tpl-mandala",
+      "videoTemplateId": "vid-glow",
+      "imageUrl": "",
+      "imageStatus": "template",
       "aiPrompt": "Puja thali with roli tilak, rice, sweets and a diya, warm family festive colours",
-      "showDaysBefore": 5, "regional": [],
-      "status": "published", "verified": false, "source": "Public listings for Diwali 2026", "createdAt": "2026-10-10"
+      "showDaysBefore": 5,
+      "regional": [],
+      "status": "published",
+      "verified": false,
+      "source": "Public listings for Diwali 2026",
+      "createdAt": "2026-10-10"
     },
     {
-      "id": "devutthana-ekadashi-2026", "recurrence": "once", "date": "2026-11-20", "year": 2026,
-      "name": { "en": "Dev Uthani Ekadashi", "hi": "देवउठनी एकादशी" },
-      "wish": { "en": "May Shri Hari awaken blessings in your life", "hi": "देवउठनी एकादशी की शुभकामनाएँ" },
-      "deity": { "en": "Lord Vishnu", "hi": "भगवान विष्णु" },
-      "category": "vrat", "tags": ["ekadashi"], "languages": ["hi", "en"],
-      "templateId": "tpl-lotus", "videoTemplateId": "vid-glow", "imageUrl": "", "imageStatus": "template",
+      "id": "devutthana-ekadashi-2026",
+      "recurrence": "once",
+      "date": "2026-11-20",
+      "year": 2026,
+      "name": {
+        "en": "Dev Uthani Ekadashi",
+        "hi": "देवउठनी एकादशी"
+      },
+      "wish": {
+        "en": "May Shri Hari awaken blessings in your life",
+        "hi": "देवउठनी एकादशी की शुभकामनाएँ"
+      },
+      "deity": {
+        "en": "Lord Vishnu",
+        "hi": "भगवान विष्णु"
+      },
+      "category": "vrat",
+      "tags": [
+        "ekadashi"
+      ],
+      "languages": [
+        "hi",
+        "en"
+      ],
+      "templateId": "tpl-lotus",
+      "videoTemplateId": "vid-glow",
+      "imageUrl": "",
+      "imageStatus": "template",
       "aiPrompt": "Decorated sugarcane mandap with tulsi plant and diyas, auspicious wedding-season colours",
       "showDaysBefore": 5,
       "regional": [
-        { "region": "ISKCON / Vaishnava", "date": "2026-11-21", "note": "Vaishnava observance listed on 21 Nov" }
+        {
+          "region": "ISKCON / Vaishnava",
+          "date": "2026-11-21",
+          "note": "Vaishnava observance listed on 21 Nov"
+        }
       ],
-      "status": "published", "verified": false, "source": "Drik Panchang Ekadashi list 2026 (New Delhi)", "createdAt": "2026-10-10"
+      "status": "published",
+      "verified": false,
+      "source": "Drik Panchang Ekadashi list 2026 (New Delhi)",
+      "createdAt": "2026-10-10"
     },
     {
-      "id": "chhath-2026-draft", "recurrence": "once", "date": "2026-11-15", "year": 2026,
-      "name": { "en": "Chhath Puja (draft)", "hi": "छठ पूजा (ड्राफ्ट)" },
-      "wish": { "en": "Happy Chhath Puja", "hi": "छठ पूजा की हार्दिक शुभकामनाएँ" },
-      "deity": { "en": "Surya Dev & Chhathi Maiya", "hi": "सूर्य देव एवं छठी मैया" },
-      "category": "festival", "tags": [], "languages": ["hi", "en"],
-      "templateId": "tpl-sunrise", "videoTemplateId": "vid-glow", "imageUrl": "", "imageStatus": "pending",
+      "id": "chhath-2026-draft",
+      "recurrence": "once",
+      "date": "2026-11-15",
+      "year": 2026,
+      "name": {
+        "en": "Chhath Puja (draft)",
+        "hi": "छठ पूजा (ड्राफ्ट)"
+      },
+      "wish": {
+        "en": "Happy Chhath Puja",
+        "hi": "छठ पूजा की हार्दिक शुभकामनाएँ"
+      },
+      "deity": {
+        "en": "Surya Dev & Chhathi Maiya",
+        "hi": "सूर्य देव एवं छठी मैया"
+      },
+      "category": "festival",
+      "tags": [],
+      "languages": [
+        "hi",
+        "en"
+      ],
+      "templateId": "tpl-sunrise",
+      "videoTemplateId": "vid-glow",
+      "imageUrl": "",
+      "imageStatus": "pending",
       "aiPrompt": "Devotees offering arghya to the setting sun at a riverbank with bamboo soop baskets",
-      "showDaysBefore": 7, "regional": [],
-      "status": "draft", "verified": false, "source": "DATE NOT VERIFIED — example of an unpublished record", "createdAt": "2026-10-24"
+      "showDaysBefore": 7,
+      "regional": [],
+      "status": "draft",
+      "verified": false,
+      "source": "DATE NOT VERIFIED — example of an unpublished record",
+      "createdAt": "2026-10-24"
     },
-
-    { "id": "birthday", "recurrence": "anytime", "name": { "en": "Happy Birthday", "hi": "जन्मदिन मुबारक" }, "wish": { "en": "May God bless you with a wonderful year", "hi": "जन्मदिन की ढेरों शुभकामनाएँ" }, "deity": { "en": "Blessings", "hi": "आशीर्वाद" }, "category": "birthday", "tags": [], "languages": ["hi", "en"], "templateId": "tpl-mandala", "videoTemplateId": "vid-glow", "imageUrl": "", "imageStatus": "template", "aiPrompt": "Festive marigold and diya arrangement with soft bokeh lights, celebratory warm colours", "status": "published", "verified": true, "createdAt": "2026-10-20" },
-    { "id": "anniversary", "recurrence": "anytime", "name": { "en": "Happy Anniversary", "hi": "शादी की सालगिरह मुबारक" }, "wish": { "en": "Wishing you a lifetime of togetherness", "hi": "आपका साथ सदा बना रहे" }, "deity": { "en": "Blessings", "hi": "आशीर्वाद" }, "category": "special", "tags": [], "languages": ["hi", "en"], "templateId": "tpl-lotus", "videoTemplateId": "vid-glow", "imageUrl": "", "imageStatus": "template", "aiPrompt": "Two lotus flowers side by side on a moonlit pond, romantic soft pink and gold", "status": "published", "verified": true, "createdAt": "2026-10-20" },
-    { "id": "griha-pravesh", "recurrence": "anytime", "name": { "en": "Griha Pravesh", "hi": "गृह प्रवेश" }, "wish": { "en": "Best wishes for your new home", "hi": "नए घर की हार्दिक शुभकामनाएँ" }, "deity": { "en": "Lord Ganesha", "hi": "गणेश जी" }, "category": "special", "tags": [], "languages": ["hi", "en"], "templateId": "tpl-kalash", "videoTemplateId": "vid-glow", "imageUrl": "", "imageStatus": "template", "aiPrompt": "Kalash with mango leaves and coconut at a decorated doorway, rangoli, auspicious morning", "status": "published", "verified": true, "createdAt": "2026-10-20" }
+    {
+      "id": "birthday",
+      "recurrence": "anytime",
+      "name": {
+        "en": "Happy Birthday",
+        "hi": "जन्मदिन मुबारक"
+      },
+      "wish": {
+        "en": "May God bless you with a wonderful year",
+        "hi": "जन्मदिन की ढेरों शुभकामनाएँ"
+      },
+      "deity": {
+        "en": "Blessings",
+        "hi": "आशीर्वाद"
+      },
+      "category": "birthday",
+      "tags": [],
+      "languages": [
+        "hi",
+        "en"
+      ],
+      "templateId": "tpl-mandala",
+      "videoTemplateId": "vid-glow",
+      "imageUrl": "",
+      "imageStatus": "template",
+      "aiPrompt": "Festive marigold and diya arrangement with soft bokeh lights, celebratory warm colours",
+      "status": "published",
+      "verified": true,
+      "createdAt": "2026-10-20"
+    },
+    {
+      "id": "anniversary",
+      "recurrence": "anytime",
+      "name": {
+        "en": "Happy Anniversary",
+        "hi": "शादी की सालगिरह मुबारक"
+      },
+      "wish": {
+        "en": "Wishing you a lifetime of togetherness",
+        "hi": "आपका साथ सदा बना रहे"
+      },
+      "deity": {
+        "en": "Blessings",
+        "hi": "आशीर्वाद"
+      },
+      "category": "special",
+      "tags": [],
+      "languages": [
+        "hi",
+        "en"
+      ],
+      "templateId": "tpl-lotus",
+      "videoTemplateId": "vid-glow",
+      "imageUrl": "",
+      "imageStatus": "template",
+      "aiPrompt": "Two lotus flowers side by side on a moonlit pond, romantic soft pink and gold",
+      "status": "published",
+      "verified": true,
+      "createdAt": "2026-10-20"
+    },
+    {
+      "id": "griha-pravesh",
+      "recurrence": "anytime",
+      "name": {
+        "en": "Griha Pravesh",
+        "hi": "गृह प्रवेश"
+      },
+      "wish": {
+        "en": "Best wishes for your new home",
+        "hi": "नए घर की हार्दिक शुभकामनाएँ"
+      },
+      "deity": {
+        "en": "Lord Ganesha",
+        "hi": "गणेश जी"
+      },
+      "category": "special",
+      "tags": [],
+      "languages": [
+        "hi",
+        "en"
+      ],
+      "templateId": "tpl-kalash",
+      "videoTemplateId": "vid-glow",
+      "imageUrl": "",
+      "imageStatus": "template",
+      "aiPrompt": "Kalash with mango leaves and coconut at a decorated doorway, rangoli, auspicious morning",
+      "status": "published",
+      "verified": true,
+      "createdAt": "2026-10-20"
+    }
   ]
 }
