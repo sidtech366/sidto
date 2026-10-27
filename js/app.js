@@ -263,9 +263,20 @@
     pub.sort((a, b) => (todays.includes(b.id) - todays.includes(a.id)));
     let f = (id && Data.find(id)) || Data.find(todays[0]) || pub[0];
     const vids = Data.templates("video");
+    const tracks = Data.templates("audio");
     let tplId = (f && f.videoTemplateId && Data.template(f.videoTemplateId)) ? f.videoTemplateId : (vids[0] && vids[0].id);
+    const defaultMusic = () => {
+      const tpl = Data.template(tplId) || {};
+      const m = (f && f.musicId && Data.template(f.musicId)) ? f.musicId : (tpl.musicId && Data.template(tpl.musicId) ? tpl.musicId : (tracks[0] && tracks[0].id));
+      return m || "";
+    };
+    let musicId = defaultMusic();
+    let musicTouched = false;
+    let seconds = 12;
     const prefs = Object.assign(Store.getPosterPrefs(), { nameY: 83, fontSize: 70, photoSize: 190 });
-    const canExport = window.SidtoVideo.VideoComposer.canExport();
+    const VC = window.SidtoVideo.VideoComposer;
+    const canExport = VC.canExport();
+    const canAudio = VC.canExportAudio();
 
     view.innerHTML = `
       <h1 class="page-title">${esc(t("video_title"))}</h1>
@@ -278,12 +289,15 @@
         <div>
           <div class="panel">
             <div class="btn-row">
-              <button class="btn secondary small" id="vPlay">⏯️ ${esc(t("play"))} / ${esc(t("pause"))}</button>
+              <button class="btn small" id="vPlay">▶️ ${esc(t("play_music"))}</button>
               <button class="btn secondary small" id="vRestart">⏮️ ${esc(t("restart"))}</button>
             </div>
+            <p class="small muted" id="vAudioHint">🔊 ${esc(t("music_hint"))}</p>
             <hr class="soft">
+            <div class="field"><span class="label">${esc(t("video_length"))}</span>
+              <div class="seg" id="vLen"><button data-v="6">6 s</button><button data-v="12">12 s</button><button data-v="18">18 s</button></div></div>
             <button class="btn block" id="vExport" ${canExport ? "" : "disabled"}>🎞️ ${esc(t("export_video"))}</button>
-            <p class="small muted" id="vStatus">${esc(canExport ? t("video_note") : t("video_export_unsupported"))}</p>
+            <p class="small muted" id="vStatus">${esc(canExport ? (canAudio ? t("video_note") : t("video_note_silent")) : t("video_export_unsupported"))}</p>
             <div id="vResult"></div>
           </div>
           <div class="panel">
@@ -292,6 +306,10 @@
             <div class="field"><label for="vTpl">${esc(t("video_template"))}</label>
               <select id="vTpl">${vids.map(v => `<option value="${esc(v.id)}" ${v.id === tplId ? "selected" : ""}>${esc(v.name)}</option>`).join("")}</select>
               <small id="vLicense"></small></div>
+            <div class="field"><label for="vMusic">🎵 ${esc(t("music"))}</label>
+              <select id="vMusic"><option value="">${esc(t("no_music"))}</option>${tracks.map(a => `<option value="${esc(a.id)}">${esc(Data.text(a.label, lang) || a.name)}</option>`).join("")}</select>
+              <small id="vMusicLicense"></small></div>
+            <div class="field"><label for="vVol">🔉 ${esc(t("volume"))}</label><input type="range" id="vVol" min="0" max="100" value="80"></div>
             <div class="field"><label for="vNameY">${esc(t("name_position"))}</label><input type="range" id="vNameY" min="40" max="92" value="${prefs.nameY}"></div>
             <div class="field"><label for="vFont">${esc(t("font_size"))}</label><input type="range" id="vFont" min="36" max="110" value="${prefs.fontSize}"></div>
             <div class="field"><span class="label">${esc(t("photo_place"))}</span>
@@ -301,8 +319,14 @@
       </div>`}`;
     if (!vids.length) return;
 
-    const comp = new window.SidtoVideo.VideoComposer($("#vCanvas"), $("#vSrc"));
-    comp.onError = () => { $("#vStatus").innerHTML = `<span class="notice err" style="display:block">${esc(t("video_error"))}</span>`; };
+    const comp = new VC($("#vCanvas"), $("#vSrc"));
+    const vEl = $("#vSrc");
+    comp.onError = () => { if (!$("#vStatus")) return; $("#vStatus").innerHTML = `<span class="notice err" style="display:block">${esc(t("video_error"))}</span>`; };
+    comp.onAudioState = s => {
+      const h = $("#vAudioHint"); if (!h) return;
+      if (s === "error") h.textContent = "⚠️ " + t("music_error");
+      if (s === "playing") h.textContent = "🔊 " + t("music_playing");
+    };
     async function applyOverlay() {
       const theme = Data.themeFor(Object.assign({}, f, { templateId: tplId }));
       await comp.setOverlay({ title: Data.text(f.name, lang), wish: Data.text(f.wish, lang), name: profile.name, tagline: profile.tagline, photo: profile.photo, prefs, theme });
@@ -310,40 +334,68 @@
     function applyTemplate() {
       const tpl = Data.template(tplId);
       $("#vLicense").textContent = tpl && tpl.license ? "© " + tpl.license : "";
-      comp.setSource(tpl.url); comp.play();
+      comp.setSource(tpl.url);
+      const p = vEl.play(); if (p && p.catch) p.catch(() => {});
       $("#vResult").innerHTML = "";
     }
+    function applyMusic() {
+      $("#vMusic").value = musicId;
+      const a = Data.template(musicId);
+      $("#vMusicLicense").textContent = a && a.license ? "© " + a.license : "";
+      comp.setMusic(a ? a.url : "");
+    }
     function syncPlace() { $all("#vPlace button").forEach(b => b.setAttribute("aria-pressed", b.dataset.v === prefs.photoPlace)); }
+    function syncLen() { $all("#vLen button").forEach(b => b.setAttribute("aria-pressed", Number(b.dataset.v) === seconds)); }
+    function syncPlayBtn() { const pb = $("#vPlay"); if (!pb) return; pb.innerHTML = vEl.paused ? "▶️ " + esc(t("play_music")) : "⏸️ " + esc(t("pause")); }
 
-    $("#vWish").onchange = e => { f = Data.find(e.target.value); if (f.videoTemplateId && Data.template(f.videoTemplateId)) { tplId = f.videoTemplateId; $("#vTpl").value = tplId; applyTemplate(); } applyOverlay(); };
-    $("#vTpl").onchange = e => { tplId = e.target.value; applyTemplate(); applyOverlay(); };
+    $("#vWish").onchange = e => {
+      f = Data.find(e.target.value);
+      if (f.videoTemplateId && Data.template(f.videoTemplateId)) { tplId = f.videoTemplateId; $("#vTpl").value = tplId; applyTemplate(); }
+      if (!musicTouched) { musicId = defaultMusic(); applyMusic(); }
+      applyOverlay();
+    };
+    $("#vTpl").onchange = e => { tplId = e.target.value; applyTemplate(); if (!musicTouched) { musicId = defaultMusic(); applyMusic(); } applyOverlay(); };
+    $("#vMusic").onchange = async e => { musicTouched = true; musicId = e.target.value; await comp.userGesture(); applyMusic(); };
+    $("#vVol").oninput = e => comp.setVolume(Number(e.target.value) / 100);
     $("#vNameY").oninput = e => { prefs.nameY = Number(e.target.value); };
     $("#vFont").oninput = e => { prefs.fontSize = Number(e.target.value); };
     $all("#vPlace button").forEach(b => b.onclick = () => { prefs.photoPlace = b.dataset.v; syncPlace(); });
-    $("#vPlay").onclick = () => { const v = $("#vSrc"); v.paused ? comp.play() : comp.pause(); };
-    $("#vRestart").onclick = () => comp.restart();
+    $all("#vLen button").forEach(b => b.onclick = () => { seconds = Number(b.dataset.v); syncLen(); });
+    $("#vPlay").onclick = async () => {
+      await comp.userGesture();
+      if (vEl.paused || !comp.musicNode) { if (!comp.musicBuffer && musicId) await comp.setMusic(Data.template(musicId).url); comp.play(); }
+      else comp.pause();
+      syncPlayBtn();
+    };
+    $("#vRestart").onclick = async () => { await comp.userGesture(); if (!comp.musicBuffer && musicId) await comp.setMusic(Data.template(musicId).url); comp.restart(); syncPlayBtn(); };
+    vEl.addEventListener("play", syncPlayBtn); vEl.addEventListener("pause", syncPlayBtn);
     $("#vExport").onclick = async () => {
       const btn = $("#vExport"), status = $("#vStatus");
       btn.disabled = true; $("#vResult").innerHTML = "";
       status.textContent = t("exporting");
       try {
-        const blob = await comp.exportClip(p => { status.textContent = t("exporting") + " " + Math.round(p * 100) + "%"; });
+        await comp.userGesture();
+        if (musicId && !comp.musicBuffer) await comp.setMusic(Data.template(musicId).url);
+        const r = await comp.exportClip(seconds, !!musicId, p => { status.textContent = t("exporting") + " " + Math.round(p * 100) + "%"; });
+        const blob = r.blob;
         const ext = blob.type.includes("mp4") ? "mp4" : "webm";
         const url = URL.createObjectURL(blob);
         const name = `sidto-${f.id}-${Date.now()}.${ext}`;
-        status.textContent = t("video_export_ok") + ` (${ext.toUpperCase()}, ${(blob.size / 1024 / 1024).toFixed(1)} MB)`;
+        const soundNote = r.hasAudio ? "🔊 " + t("with_music") : "🔇 " + t("without_music");
+        status.textContent = t("video_export_ok") + ` (${ext.toUpperCase()}, ${seconds} s, ${(blob.size / 1024 / 1024).toFixed(1)} MB, ${soundNote})`;
+        if (ext === "webm") status.textContent += " " + t("webm_note");
         $("#vResult").innerHTML = `<video class="exported" src="${url}" controls playsinline></video>
           <div class="btn-row" style="margin-top:10px"><button class="btn" id="vShare">📤 ${esc(t("share"))}</button><button class="btn secondary" id="vSave">⬇️ ${esc(t("save"))}</button></div>`;
         $("#vSave").onclick = () => { Poster.download(blob, name); toast(t("saved_ok")); };
-        $("#vShare").onclick = async () => { const r = await Poster.shareOrDownload(blob, name, Data.text(f.name, lang)); if (r === "downloaded") toast(t("share_fallback"), 4200); };
-        comp.play();
+        $("#vShare").onclick = async () => { const rr = await Poster.shareOrDownload(blob, name, Data.text(f.name, lang)); if (rr === "downloaded") toast(t("share_fallback"), 4200); };
       } catch (e) {
         status.textContent = (e && e.message === "unsupported") ? t("video_export_unsupported") : (t("export_error") + " " + (e && e.message ? "(" + e.message + ")" : ""));
-      } finally { btn.disabled = false; }
+      } finally { btn.disabled = false; syncPlayBtn(); }
     };
 
-    syncPlace(); applyTemplate(); applyOverlay().then(() => comp.start());
-    cleanup = () => comp.stop();
+    syncPlace(); syncLen(); applyTemplate(); applyMusic();
+    applyOverlay().then(() => comp.start());
+    cleanup = () => { vEl.removeEventListener("play", syncPlayBtn); vEl.removeEventListener("pause", syncPlayBtn); comp.onAudioState = null; comp.onError = null; comp.stop(); };
   }
 
   /* ================= AI CREATE ================= */

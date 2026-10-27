@@ -116,7 +116,7 @@
 
   function renderEditor() {
     const f = editing;
-    const imgT = work.templates.filter(t => t.type === "image"), vidT = work.templates.filter(t => t.type === "video");
+    const imgT = work.templates.filter(t => t.type === "image"), vidT = work.templates.filter(t => t.type === "video"), audT = work.templates.filter(t => t.type === "audio");
     $("#tabBody").innerHTML = `
       <div class="admin-editor">
         <div class="panel">
@@ -130,6 +130,7 @@
           <div class="three">${field("Date", `<input type="date" id="e_date" value="${esc(f.date || "")}">`)}${field("End date", `<input type="date" id="e_end" value="${esc(f.endDate || "")}">`, "multi-day only")}${field("Show days before", `<input type="number" id="e_before" min="0" max="60" value="${esc(f.showDaysBefore ?? 5)}">`)}</div>
           ${field("Regional dates (one per line: Region, YYYY-MM-DD, note)", `<textarea id="e_reg">${esc((f.regional || []).map(r => [r.region, r.date, r.note || ""].join(", ")).join("\n"))}</textarea>`, "Users choose their region in Profile; this date then replaces the main date for them.")}
           <div class="two">${field("Poster template", `<select id="e_tpl">${opt(imgT.map(t => t.id), f.templateId, imgT.map(t => t.name + (t.active === false ? " (inactive)" : "")))}</select>`)}${field("Video template", `<select id="e_vtpl"><option value="">— none —</option>${opt(vidT.map(t => t.id), f.videoTemplateId, vidT.map(t => t.name))}</select>`)}</div>
+          ${field("Music for video wishes", `<select id="e_music"><option value="">— use the video template's music —</option>${opt(audT.map(t => t.id), f.musicId || "", audT.map(t => t.name))}</select>`)}
           ${field("Festival image URL (optional, overrides template)", `<input type="url" id="e_img" value="${esc(f.imageUrl && f.imageUrl.startsWith("data:") ? "" : f.imageUrl)}" placeholder="assets/festivals/diwali.jpg or https://…">
             <label class="btn small secondary" style="justify-self:start">📁 Use image from phone<input type="file" id="e_imgfile" accept="image/*" hidden></label>`,
             f.imageUrl && f.imageUrl.startsWith("data:") ? "Using an image from this phone (embedded). Better: upload it to assets/ in GitHub and paste its path." : "Best practice: upload images to the repo's assets/ folder and paste the path here.")}
@@ -161,7 +162,7 @@
       if (f.date) f.year = Number(f.date.slice(0, 4));
       f.showDaysBefore = Number(g("e_before")) || 0;
       f.regional = g("e_reg").split("\n").map(l => l.split(",").map(s => s.trim())).filter(p => p[0] && p[1]).map(p => ({ region: p[0], date: p[1], note: p.slice(2).join(", ") }));
-      f.templateId = g("e_tpl"); f.videoTemplateId = g("e_vtpl");
+      f.templateId = g("e_tpl"); f.videoTemplateId = g("e_vtpl"); f.musicId = g("e_music") || undefined;
       const url = g("e_img").trim();
       if (url || !(f.imageUrl || "").startsWith("data:")) f.imageUrl = url;
       f.imageStatus = g("e_imgst"); f.status = g("e_status");
@@ -211,17 +212,18 @@
       <div class="notice info"><p><b>Licensing:</b> only add images and videos you made yourself, commissioned, or have a written licence for. Record the licence in each template. Do not copy festival art from Google, WhatsApp or other apps.</p></div>
       <div class="panel">
         ${work.templates.map(t => `<div class="rec">
-          ${t.type === "image" ? `<img src="${esc(t.url)}" alt="">` : `<img src="${esc(t.url.replace(/\.(webm|mp4)$/, "-poster.jpg"))}" alt="" onerror="this.style.visibility='hidden'">`}
-          <div class="info"><strong>${t.type === "video" ? "🎬 " : "🖼️ "}${esc(t.name)}</strong><span class="small muted">${esc(t.id)} · ${esc(t.url.length > 60 ? t.url.slice(0, 60) + "…" : t.url)}</span>
+          ${t.type === "image" ? `<img src="${esc(t.url)}" alt="">` : t.type === "audio" ? `<span style="width:46px;height:58px;display:grid;place-items:center;font-size:26px;background:var(--gold-soft);border-radius:8px;flex:0 0 auto">🎵</span>` : `<img src="${esc(t.url.replace(/\.(webm|mp4)$/, "-poster.jpg"))}" alt="" onerror="this.style.visibility='hidden'">`}
+          <div class="info"><strong>${{ video: "🎬 ", audio: "🎵 " }[t.type] || "🖼️ "}${esc(t.name)}</strong>
+            ${t.type === "audio" ? `<audio src="${esc(t.url)}" controls preload="none" style="width:100%;height:32px"></audio>` : ""}<span class="small muted">${esc(t.id)} · ${esc(t.url.length > 60 ? t.url.slice(0, 60) + "…" : t.url)}</span>
             <div class="small muted">© ${esc(t.license || "licence not recorded")}</div></div>
           <div class="acts"><label class="check small"><input type="checkbox" data-active="${esc(t.id)}" ${t.active !== false ? "checked" : ""}> Active</label></div>
         </div>`).join("")}
       </div>
       <div class="panel">
         <h2 class="section-title mt0">Add template</h2>
-        <div class="two">${field("Type", `<select id="t_type"><option value="image">Image (poster background)</option><option value="video">Video</option></select>`)}${field("Name", `<input type="text" id="t_name" placeholder="e.g. Ganesh Marigold">`)}</div>
-        ${field("File URL or path", `<input type="text" id="t_url" placeholder="assets/templates/my-art.svg  or  https://…">`, "Upload the file to the repo's assets/ folder via GitHub, then type its path. Videos: short (≤ 10 s), vertical 9:16, MP4 or WebM, under ~3 MB.")}
-        <label class="btn small secondary">📁 Preview a file from this phone<input type="file" id="t_file" accept="image/*,video/*" hidden></label>
+        <div class="two">${field("Type", `<select id="t_type"><option value="image">Image (poster background)</option><option value="video">Video</option><option value="audio">Music (MP3)</option></select>`)}${field("Name", `<input type="text" id="t_name" placeholder="e.g. Ganesh Marigold">`)}</div>
+        ${field("File URL or path", `<input type="text" id="t_url" placeholder="assets/templates/my-art.svg  or  https://…">`, "Upload the file to the repo's assets/ folder via GitHub, then type its path. Videos: short (≤ 10 s), vertical 9:16, MP4 or WebM, under ~3 MB. Music: MP3, 15–30 s, under ~1 MB, and only music you own or have a licence for.")}
+        <label class="btn small secondary">📁 Preview a file from this phone<input type="file" id="t_file" accept="image/*,video/*,audio/*" hidden></label>
         <p class="small muted" id="t_fileNote"></p>
         ${field("Licence / source", `<input type="text" id="t_lic" placeholder="e.g. Own artwork, 2026">`)}
         <div class="two">${field("Text colour", `<input type="text" id="t_color" value="#FFFFFF">`)}${field("Accent colour", `<input type="text" id="t_accent" value="#FFB020">`)}</div>
@@ -237,15 +239,16 @@
         $("#t_type").value = "image";
       } else {
         localFile = URL.createObjectURL(file);
-        $("#t_fileNote").textContent = "Video preview works only until you close this page (videos are too large to keep in browser storage). Upload it to GitHub for real use.";
-        $("#t_type").value = "video";
+        const isAudio = file.type.startsWith("audio/");
+        $("#t_fileNote").textContent = (isAudio ? "Music" : "Video") + " preview works only until you close this page (too large to keep in browser storage). Upload it to GitHub for real use.";
+        $("#t_type").value = isAudio ? "audio" : "video";
       }
     };
     $("#t_add").onclick = () => {
       const name = $("#t_name").value.trim(), url = $("#t_url").value.trim() || localFile;
       if (!name || !url) return toast("Name and file are required");
       if (!$("#t_lic").value.trim()) return toast("Please record the licence/source");
-      const id = ($("#t_type").value === "video" ? "vid-" : "tpl-") + slug(name);
+      const id = ({ video: "vid-", audio: "aud-" }[$("#t_type").value] || "tpl-") + slug(name);
       if (tplById(id)) return toast("A template with this name exists");
       work.templates.push({ id, type: $("#t_type").value, name, url, active: true, license: $("#t_lic").value.trim(), textColor: $("#t_color").value.trim() || "#FFFFFF", accent: $("#t_accent").value.trim() || "#FFB020" });
       persist(); toast("Template added locally"); renderTemplates();

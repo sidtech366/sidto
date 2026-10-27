@@ -97,7 +97,8 @@
       "active": true,
       "license": "Original animation made for Sidto (free to use in this project)",
       "textColor": "#FFF6E0",
-      "accent": "#FFB020"
+      "accent": "#FFB020",
+      "musicId": "aud-mangal"
     },
     {
       "id": "vid-moon",
@@ -107,7 +108,44 @@
       "active": true,
       "license": "Original animation made for Sidto (free to use in this project)",
       "textColor": "#F4F1FF",
-      "accent": "#C9B8FF"
+      "accent": "#C9B8FF",
+      "musicId": "aud-shanti"
+    },
+    {
+      "id": "aud-mangal",
+      "type": "audio",
+      "name": "Mangal Dhun",
+      "label": {
+        "en": "Mangal Dhun — flute & bells",
+        "hi": "मंगल धुन — बाँसुरी व घंटी"
+      },
+      "url": "assets/music/mangal-dhun.mp3",
+      "active": true,
+      "license": "Original music composed and synthesised for Sidto (free to use in this project)"
+    },
+    {
+      "id": "aud-utsav",
+      "type": "audio",
+      "name": "Utsav",
+      "label": {
+        "en": "Utsav — dholak & shehnai",
+        "hi": "उत्सव — ढोलक व शहनाई"
+      },
+      "url": "assets/music/utsav.mp3",
+      "active": true,
+      "license": "Original music composed and synthesised for Sidto (free to use in this project)"
+    },
+    {
+      "id": "aud-shanti",
+      "type": "audio",
+      "name": "Shanti",
+      "label": {
+        "en": "Shanti — calm tanpura",
+        "hi": "शांति — शांत तानपुरा"
+      },
+      "url": "assets/music/shanti.mp3",
+      "active": true,
+      "license": "Original music composed and synthesised for Sidto (free to use in this project)"
     }
   ],
   "festivals": [
@@ -454,7 +492,8 @@
       "status": "published",
       "verified": false,
       "source": "Public panchang listings, New Delhi",
-      "createdAt": "2026-10-10"
+      "createdAt": "2026-10-10",
+      "musicId": "aud-utsav"
     },
     {
       "id": "papankusha-ekadashi-2026",
@@ -759,7 +798,8 @@
       "status": "published",
       "verified": false,
       "source": "Public listings for Diwali 2026",
-      "createdAt": "2026-10-10"
+      "createdAt": "2026-10-10",
+      "musicId": "aud-utsav"
     },
     {
       "id": "diwali-2026",
@@ -796,7 +836,8 @@
       "status": "published",
       "verified": false,
       "source": "Public listings for Diwali 2026",
-      "createdAt": "2026-10-10"
+      "createdAt": "2026-10-10",
+      "musicId": "aud-utsav"
     },
     {
       "id": "govardhan-puja-2026",
@@ -834,7 +875,8 @@
       "status": "published",
       "verified": false,
       "source": "Public listings for Diwali 2026",
-      "createdAt": "2026-10-10"
+      "createdAt": "2026-10-10",
+      "musicId": "aud-utsav"
     },
     {
       "id": "bhai-dooj-2026",
@@ -871,7 +913,8 @@
       "status": "published",
       "verified": false,
       "source": "Public listings for Diwali 2026",
-      "createdAt": "2026-10-10"
+      "createdAt": "2026-10-10",
+      "musicId": "aud-utsav"
     },
     {
       "id": "devutthana-ekadashi-2026",
@@ -979,7 +1022,8 @@
       "aiPrompt": "Festive marigold and diya arrangement with soft bokeh lights, celebratory warm colours",
       "status": "published",
       "verified": true,
-      "createdAt": "2026-10-20"
+      "createdAt": "2026-10-20",
+      "musicId": "aud-utsav"
     },
     {
       "id": "anniversary",
@@ -1009,7 +1053,8 @@
       "aiPrompt": "Two lotus flowers side by side on a moonlit pond, romantic soft pink and gold",
       "status": "published",
       "verified": true,
-      "createdAt": "2026-10-20"
+      "createdAt": "2026-10-20",
+      "musicId": "aud-utsav"
     },
     {
       "id": "griha-pravesh",

@@ -16,7 +16,8 @@ Built with plain HTML, CSS and JavaScript. No build step, no framework, no paid 
 | Poster: name + photo over a template, adjust position/size/colour, Save, Share | ✅ Works (Canvas, on the phone) |
 | Regional date overrides (e.g. Odisha, USA/Canada) | ✅ Works (chosen in Profile) |
 | Video wish: name + photo overlaid on a template video, live preview | ✅ Works |
-| Video export | ⚠️ Experimental. Records the preview in real time with the browser's MediaRecorder. Tested in desktop Chromium (produced a 6 s MP4). Silent. Must be tested on your phone. Disabled with an explanation where unsupported. |
+| Video export **with music** | ⚠️ Experimental. Records the preview plus the chosen background music in real time (6, 12 or 18 s) with the browser's MediaRecorder + Web Audio. Tested in desktop Chromium: produced MP4 files with a video track and an audio track at a normal loudness. **Must be tested on your phone**, including that WhatsApp accepts the file. If a browser can record video but not audio, the app says the clip will be silent. |
+| Background music | ✅ 3 original tracks (Mangal Dhun, Utsav, Shanti), synthesised for this project — no copyright issues. Choose per video; admins can set a default per festival or video template. |
 | AI prompt builder | ✅ Works (text only) |
 | AI image generation | ❌ Not connected. The app says so honestly. A backend template is included (Step 7). |
 | Admin panel: add/edit/delete/schedule records, templates, preview, export JSON | ✅ Works as a **demo** — no login, edits stay in that browser until you publish the JSON |
@@ -60,7 +61,8 @@ sidto/
 │   ├── icons/               App icons (SVG + PNG 192/512 + maskable)
 │   ├── fonts/               Mukta + Yatra One (OFL)
 │   ├── templates/           8 original poster backgrounds (SVG)
-│   └── videos/              2 original animated 6-second video templates (WebM) + preview frames
+│   ├── videos/              2 original animated 6-second video templates (WebM) + preview frames
+│   └── music/               3 original background music tracks (MP3, 24 s)
 ├── tools/                   Python scripts that generated the artwork (optional, need a computer/Python)
 └── backend/                 NOT deployed by GitHub Pages — copy into the services below
     ├── cloudflare-worker/worker.js   AI image backend template (untested)
@@ -211,7 +213,7 @@ Admin edits are saved **only in that browser** as a draft. The app on the same p
 4. **AI images for admins.** Deploy the Worker, restrict generation to signed-in admins, save results as festival `imageUrl`. Generate once per festival, never per user.
 5. **Optional persistent profiles.** Sign-in, then save the name (and only with clear consent, the photo) to Firestore/Storage so it syncs across phones. Keep "local only" as the default, add a delete-my-account option and a privacy policy.
 6. **Notifications.** Firebase Cloud Messaging with a service-worker push handler, plus a daily scheduled job (Apps Script time trigger or a Cloud Function) that sends "Today: Diwali — make your poster". Needs user permission; Android 13+ asks explicitly.
-7. **Reliable video export.** Today's in-browser export is silent and device-dependent. Next: mix template audio with Web Audio during recording; then a server renderer (FFmpeg on a container service) that receives the overlay settings and returns an MP4 — this has hosting cost and needs upload consent for the photo.
+7. **Reliable video export.** Music is now mixed in the browser, but recording is real-time and device-dependent, and the audio codec depends on the browser (AAC in MP4 where supported, otherwise Opus). Next: a server renderer (FFmpeg on a container service) that receives the overlay settings and returns an MP4 — this has hosting cost and needs upload consent for the photo.
 8. **Play Store release.** assetlinks verification, privacy policy, store listing, signed AAB from PWABuilder.
 
 ---
@@ -222,6 +224,9 @@ Admin edits are saved **only in that browser** as a draft. The app on the same p
 - **New interface words:** add the same key to `en` and `hi` in `js/i18n.js`.
 - **New poster background:** upload an image or SVG (portrait, ideally 1080×1350, leave the top ~25% and bottom ~25% calm for text) to `assets/templates/`, then add it in Admin → Templates. If the art has a garland at the top, add `"titleY": 262` to that template in `festivals.json` to move the title lower (default 196).
 - **New video template:** vertical 9:16, ≤ 10 seconds, ≤ ~3 MB, MP4 (H.264) or WebM, to `assets/videos/`.
+- **New music:** MP3, 15–30 s, under ~1 MB, only music you made or have a written licence for (film songs and popular bhajan recordings are copyrighted). Upload to `assets/music/`, then add it in Admin → Templates with type *Music*.
+
+**Video sound — what to expect on your phone:** browsers only play sound after a tap, so tap **Play with music** first. If you hear nothing, check the phone isn't on silent and the volume is up. The exported file includes the music; play it once before sharing.
 - **Daily/weekly items:** use repeat type `daily` or `weekly` (weekday 0 = Sunday).
 
 ## 12. Troubleshooting
@@ -232,5 +237,7 @@ Admin edits are saved **only in that browser** as a draft. The app on the same p
 | Changes don't appear | Wait 2 minutes after uploading; pull to refresh. Still old? Clear site data once. |
 | Share downloads instead | That browser can't share files; the poster is in Downloads. In the APK, use PWABuilder (not a plain WebView). |
 | Export video button greyed out | The browser lacks MediaRecorder. Update Chrome; preview still works. |
+| Exported video has no sound | You picked "No music", the music file didn't load (check internet), or the browser can't record audio — the status line after export says 🔊 or 🔇. Update Chrome. |
+| WhatsApp won't take the video | It was saved as WebM. Update Chrome (newer versions record MP4) or open the file in a video app and share from there. |
 | Photo won't save | Storage full — choose a smaller photo or remove uploaded admin images. |
 | Fonts look plain | Fonts are bundled in assets/fonts — check that folder was uploaded. |
